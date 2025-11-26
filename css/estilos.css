@@ -1,0 +1,226 @@
+
+/* styles.css - versión completa corregida */
+
+/* Reset y base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: #f6f7fb;
+  color: #111;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Header */
+header {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+/* Menú separado */
+.menu {
+  background: #0b6cff;
+  text-align: center;
+}
+
+.menu ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: #1a1a1a;
+}
+
+/* Layout */
+.container { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 0; }
+header { background: #0f1724; color: #fff; padding: 12px 0; }
+header h1 { margin: 0; font-size: 1.25rem; padding-left: 16px; }
+nav ul { list-style: none; display: flex; gap: 12px; margin-right: 16px; }
+nav a { color: #cfe8ff; text-decoration: none; padding: 6px 10px; border-radius: 6px; display: inline-block; }
+nav a:hover { background: rgba(255,255,255,0.04); }
+
+/* Intro */
+.intro { margin: 18px 0; padding: 14px; background: #fff; border-radius: 10px; box-shadow: 0 6px 18px rgba(10,20,30,0.06); }
+
+/* Grid - productos */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 18px; }
+
+/* Card producto */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(10,20,30,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(10,20,30,0.12); }
+
+/* image-wrap: apilar dos imágenes para swap */
+.image-wrap { position: relative; height: 200px; background: #efeff3; display: block; overflow: hidden; }
+.image-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .28s ease, transform .28s ease; }
+.image-wrap .img-front { z-index: 2; opacity: 1; transform: scale(1); }
+.image-wrap .img-back { z-index: 1; opacity: 0; transform: scale(1.03); }
+
+/* Al hover: intercambio (swap) entre imágenes */
+.card:hover .image-wrap .img-front { opacity: 0; transform: scale(0.98); }
+.card:hover .image-wrap .img-back  { opacity: 1; transform: scale(1); }
+
+/* Content */
+.content { padding: 14px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; min-height: 120px; }
+.content h3 { margin: 0 0 6px 0; font-size: 1.05rem; }
+.content p { margin: 0; color: #444; font-size: 0.95rem; }
+
+/* Meta */
+.meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; }
+.price { font-weight: 700; color: #0b6cff; }
+button, .btn-blue { background: #0b6cff; color: #fff; border: none; padding: 8px 12px; border-radius: 8px; cursor: pointer; }
+button:hover, .btn-blue:hover { filter: brightness(0.95); }
+
+/* Footer - reorganizado en secciones */
+.site-footer {
+  background: #0f1724;
+  color: #e6eefc;
+  padding: 30px 0 20px;
+  margin-top: 40px;
+  border-top: 4px solid rgba(11,108,255,0.06);
+}
+.footer-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.footer-section h3 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+.footer-section p,
+.footer-section li,
+.footer-section a {
+  color: #cfe1ff;
+  font-size: 0.95rem;
+}
+.footer-section a { text-decoration: none; }
+.footer-section a:hover { text-decoration: underline; }
+
+/* Lists */
+.social-list,
+.branches { padding-left: 18px; }
+.social-list li,
+.branches li { margin-bottom: 6px; }
+
+/* Desarrolladores */
+.developers { line-height: 1.4; font-weight: 600; color: #d9e7ff; }
+
+/* Footer bottom text */
+.footer-copy { text-align: center; margin-top: 20px; font-size: 0.9rem; opacity: 0.85; }
+
+/* Accesibilidad: foco visible para tarjetas */
+.card:focus { outline: 3px solid rgba(11,108,255,0.18); outline-offset: 2px; }
+.card:focus .image-wrap img { transform: scale(1.01); }
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .image-wrap { height: 180px; }
+  header h1 { padding-left: 10px; font-size: 1.1rem; }
+  nav ul { gap: 8px; flex-wrap: wrap; }
+  .container { padding: 0 12px; margin: 18px auto; }
+}
+
+/* ---------- ESTILOS PARA LA PÁGINA DE CONTACTO ---------- */
+
+/* Contenedor general (remarcado para formulario) */
+.contact-container { max-width: 900px; margin: 20px auto; padding: 0 16px; }
+
+/* Intro contact */
+.intro-contact {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(10, 20, 30, 0.06);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Formulario */
+.contact-form {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(10, 20, 30, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Campos */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.field label { font-weight: 600; color: #072a4b; }
+.field input, .field select, .field textarea {
+  padding: 10px;
+  border: 1px solid #cdd7e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: #0b6cff;
+  box-shadow: 0 0 6px rgba(11,108,255,0.3);
+  outline: none;
+}
+.field textarea { height: 120px; resize: vertical; }
+
+/* Botones */
+.btn-blue {
+  background: #0b6cff;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.btn-blue:hover { background: #0956c7; }
+.btn-gray {
+  background: #d4d8dd;
+  color: #222;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.btn-gray:hover { background: #c2c7cc; }
+
+/* Pequeños ajustes para compatibilidad con el HTML de contacto proporcionado */
+.intro h2 { color: #072a4b; }
+.contact-form .field label { color: #072a4b; }
+
+/* Fin del archivo */
+
+

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ALL-PLAY - Contátanos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+      <h2>All-PLAY</h2>
+    </div>
+  </header>
+
+  <!-- Menú separado -->
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="quienes_somos.html">Quiénes Somos</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html">Contáctanos</a></li>
+    </ul>
+  </nav>
+
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Contáctanos</h2>
+      <p>Rellena el formulario y nos pondremos en contacto contigo.</p>
+    </section>
+
+    <section>
+      <form class="contact-form" action="#" method="post" novalidate>
+        <!-- Nota: action="#" es un placeholder. Para envío real necesitas un backend o usar "mailto:" o un servicio -->
+        <div class="field">
+          <label for="nombre">Nombre del cliente</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="field">
+          <label for="celular">Celular</label>
+          <input id="celular" name="celular" type="tel" placeholder="55 1234 5678" required>
+        </div>
+
+        <div class="field">
+          <label for="mail">Correo</label>
+          <input id="mail" name="mail" type="email" placeholder="correo@ejemplo.com"
+       required 
+       pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$">
+        </div>
+
+        <div class="field">
+          <label for="tipo">Tipo de servicio o producto</label>
+          <select id="tipo" name="tipo" required>
+            <option value="">--Selecciona--</option>
+            <option value="producto">Producto</option>
+            <option value="servicio">Servicio</option>
+            <option value="asesoria">Asesoría</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="cantidad">Cantidad</label>
+          <input id="cantidad" name="cantidad" type="text" placeholder="1" required>
+        </div>
+
+        <div class="field">
+          <label>Forma de pago</label>
+          <select name="pago" required>
+            <option value="">--Selecciona--</option>
+            <option value="tarjeta">Tarjeta</option>
+            <option value="deposito">Depósito</option>
+            <option value="oxxo">Pago en Oxxo</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="mensaje">Consulta / Comentario</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Escribe aquí tu duda o comentario"></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <input type="submit" value="Enviar" class="btn-blue">
+          <input type="reset" value="Borrar" class="btn-danger">
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid container">
+  
+      <!-- Proveedor oficial -->
+      <div class="footer-section">
+        <h3>Proveedor oficial</h3>
+        <p>🔗 Visita nuestro proveedor oficial:</p>
+        <a href="https://www.nike.com/mx/" target="_blank" rel="noopener">Nike México</a>
+  
+        <h4 style="margin-top:12px;">Contacto</h4>
+        <p>📩 ¿Quieres ponerte en contacto con nosotros?<br>
+          <a href="contacto.html">Haz clic aquí</a>
+        </p>
+      </div>
+  
+      <!-- Síguenos -->
+      <div class="footer-section">
+        <h3>Síguenos:</h3>
+        <ul class="social-list">
+          <li><strong>Facebook:</strong> All-PLAY Oficial</li>
+          <li><strong>Instagram:</strong> @all_play</li>
+          <li><strong>TikTok:</strong> @allPlaymx</li>
+        </ul>
+      </div>
+  
+      <!-- Sucursales -->
+      <div class="footer-section">
+        <h3>Sucursales:</h3>
+        <ol class="branches">
+          <li>Plaza Las Américas, Local 45, Morelia, Michoacán</li>
+          <li>Av. Camelinas #2300, Col. Chapultepec, Morelia, Michoacán</li>
+          <li>Centro Comercial Espacio Las Torres, Local 12, Uruapan, Michoacán</li>
+          <li>Plaza La Huerta, Local 8, Morelia, Michoacán</li>
+        </ol>
+      </div>
+  
+      <!-- Elaborado por -->
+      <div class="footer-section">
+        <h3>Desarrollado por:</h3>
+        <p class="developers">
+          José Brandon Villicaña Duran<br>
+          Luis Eduardo Gutiérrez Romero<br>
+          Cecilia Lizet Aragón Aragón
+        </p>
+      </div>
+    </div>
+  
+    <p class="footer-copy">
+      © <span id="year"></span> All-PLAY — Todos los derechos reservados
+    </p>
+  </footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

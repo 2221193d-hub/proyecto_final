@@ -1,0 +1,227 @@
+/* styles.css */
+/* Archivo de estilos principal
+   Comentarios: aquí van todos los estilos para header, grid, cards, overlay, y el formulario.
+*/
+
+/* Reset básico */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #222;
+  line-height: 1.4;
+  padding-bottom: 60px; /* espacio para footer */
+}
+/* Header */
+header {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+/* Menú separado */
+.menu {
+  background: #0b6cff;
+  text-align: center;
+}
+
+.menu ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: #1a1a1a;
+}
+
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background .2s;
+}
+/* hover en el menú */
+nav a:hover { background: rgba(255,255,255,0.12); }
+
+/* Contenedor principal */
+.container {
+  max-width: 1100px;
+  margin: 26px auto;
+  padding: 0 18px;
+}
+
+/* Sección de introducción */
+.intro {
+  margin-bottom: 18px;
+  padding: 18px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(10,30,80,0.06);
+}
+
+/* Grid para tarjetas (productos/servicios) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+/* Tarjeta */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 6px 14px rgba(20,40,80,0.06);
+  transition: transform .18s, box-shadow .18s;
+  cursor: pointer;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+/* pequeño efecto hover (hover CSS) */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(10,30,80,0.12);
+}
+
+/* Imagen en la tarjeta */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Contenido de la tarjeta */
+.card .content {
+  padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card h3 { margin-bottom: 6px; font-size: 1.05rem; }
+.card p { font-size: 0.92rem; color: #444; }
+
+/* Precio y boton */
+.card .meta { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:10px; }
+.price { font-weight:700; color:#0b6cff; }
+
+/* Overlay (superposición) que aparece al hacer hover */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(3,10,25,0.45);
+  color: #fff;
+  opacity: 0;
+  transition: opacity .18s;
+  text-align: center;
+  padding: 18px;
+}
+.card:hover .overlay { opacity: 1; }
+
+/* Botones */
+button, input[type="submit"], input[type="reset"] {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-blue { background: #0b6cff; color: #fff; }
+.btn-danger { background: #be281e; color:#f5f6f8; }
+
+/* Footer */
+
+
+/* Formulario de contacto */
+form.contact-form {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(10,30,80,0.06);
+  margin-top: 16px;
+}
+form .field { margin-bottom: 12px; display:flex; flex-direction:column; gap:6px; }
+label { font-weight:600; font-size:0.95rem; }
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d6e0f6;
+  font-size: 0.95rem;
+  background: #fbfdff;
+}
+textarea { min-height: 100px; resize: vertical; }
+
+/* Hover en las tarjetas de la "tabla" (si usas tabla, ejemplo) */
+.table-row {
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  transition: background .12s;
+}
+.table-row:hover { background: #f0f6ff; }
+
+/* Responsive */
+@media (max-width:600px) {
+  header { flex-direction: column; gap: 10px; align-items:flex-start; }
+  .card { min-height: 300px; }
+}
+.container { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 0; }
+header { background: #0f1724; color: #fff; padding: 12px 0; }
+header h1 { margin: 0; font-size: 1.25rem; padding-left: 16px; }
+nav ul { list-style: none; display: flex; gap: 12px; margin-right: 16px; }
+nav a { color: #cfe8ff; text-decoration: none; padding: 6px 10px; border-radius: 6px; display: inline-block; }
+nav a:hover { background: rgba(255,255,255,0.04); }
+
+/* Footer - reorganizado en secciones */
+.site-footer {
+  background: #0f1724;
+  color: #e6eefc;
+  padding: 30px 0 20px;
+  margin-top: 40px;
+  border-top: 4px solid rgba(11,108,255,0.06);
+}
+.footer-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.footer-section h3 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+.footer-section p,
+.footer-section li,
+.footer-section a {
+  color: #cfe1ff;
+  font-size: 0.95rem;
+}
+.footer-section a { text-decoration: none; }
+.footer-section a:hover { text-decoration: underline; }
+.footer-copy { text-align: center; margin-top: 20px; font-size: 0.9rem; opacity: 0.85; }
+/* Pequeños ajustes para compatibilidad con el HTML de contacto proporcionado */
+.intro h2 { color: #072a4b; }
+.contact-form .field label { color: #072a4b; }
